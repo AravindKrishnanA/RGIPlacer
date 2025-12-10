@@ -1,7 +1,7 @@
 # RGIPlacer
 RGI-Placer is an analysis framework that automatically identifies novel candidate antimicrobial resistance(AMR) hits from the BLAST-based Resistance Gene Identifier(RGI) tool through the use of phylogenetic placement. 
 
-# 🧬 Metagenomic AMR Discovery Pipeline
+# Metagenomic AMR Discovery Pipeline
 
 A comprehensive workflow for identifying antimicrobial resistance (AMR) genes in human gut metagenomes using homology-based detection and phylogenetic placement.
 
