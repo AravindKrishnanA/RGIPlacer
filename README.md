@@ -84,7 +84,7 @@ export PATH=$HOME/data/aiyer51/2180/software/megahit/build:$PATH
 #### Run Assembly
 
 ```bash
-cd /oscar/data/kchellap/aiyer51/2180
+cd ./
 mkdir -p data/assembled_out
 
 megahit \
@@ -103,7 +103,7 @@ megahit \
 Run Prodigal in metagenome mode and clean stop codons (RGI rejects sequences with `*` characters).
 
 ```bash
-cd /oscar/data/kchellap/aiyer51/2180
+cd ./
 module load prodigal
 
 prodigal \
@@ -129,7 +129,7 @@ sed 's/\*//g' data/assembled_out/final.contigs.proteins.faa \
 Run RGI on cleaned protein sequences using BLAST mode. Ensure CARD database is loaded and BLAST is available.
 
 ```bash
-cd /oscar/data/kchellap/aiyer51/2180
+
 source rgienv/bin/activate
 
 # Verify CARD database version
@@ -289,26 +289,8 @@ amr_discovery/
 └── README.md
 ```
 
----
 
-## Notes & Best Practices
 
-- **Path Configuration**: Replace example paths (e.g., `/oscar/data/kchellap/aiyer51/2180`) with your environment-specific paths
-- **Workflow Automation**: Consider using Snakemake or Nextflow for reproducibility and HPC integration
-- **Parallelization**: Parallelize compute-intensive steps (MAFFT, MEGAHIT, RGI) using available cluster resources
-- **Version Control**: Log versions of all tools used for reproducibility
-
----
-
-## Suggested Improvements
-
-1. **Workflow Manager**: Implement using Snakemake or Nextflow with step dependencies
-2. **Version Logging**: Document versions of MEGAHIT, Prodigal, MAFFT, RGI, FastTree/RAxML-NG, CD-HIT
-3. **Testing**: Include a small test dataset with `--quick-test` mode for CI/CD
-4. **Reporting**: Generate summary reports (MultiQC-style) and interactive placement visualizations (iTOL, gappa)
-5. **Error Handling**: Add logging and automatic retries for failed steps
-
----
 
 ## References
 
